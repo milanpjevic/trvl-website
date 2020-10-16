@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
 	const [click, setClick] = useState(false);
 
-	const handleClick = () => setClick(!click);
-	const closeMobileMenu = () => setClick(false);
+	const clickHandler = () => setClick(!click);
+	const closeMobileMenuHandler = () => setClick(false);
 
 	return (
 		<>
@@ -14,27 +14,31 @@ const Navbar = () => {
 					<Link to="/" className="navbar-logo">
 						TRVL <i class="fab fa-typo3"></i>
 					</Link>
-					<div className="menu-icon" onClick={handleClick}>
+					<div className="menu-icon" onClick={clickHandler}>
 						<i className={click ? "fas fa-times" : "fas fa-bars"}></i>
 					</div>
 					<ul className={click ? "nav-menu active" : "nav-menu"}>
 						<li className="nav-item">
-							<Link className="nav-link" to="/" onClick={closeMobileMenu}>
+							<Link className="nav-link" to="/" onClick={closeMobileMenuHandler}>
 								Home
 							</Link>
 						</li>
 						<li className="nav-item">
-							<Link className="nav-link" to="/services" onClick={closeMobileMenu}>
+							<Link className="nav-link" to="/services" onClick={closeMobileMenuHandler}>
 								Services
 							</Link>
 						</li>
 						<li className="nav-item">
-							<Link className="nav-link" to="/products" onClick={closeMobileMenu}>
+							<Link className="nav-link" to="/products" onClick={closeMobileMenuHandler}>
 								Products
 							</Link>
 						</li>
 						<li className="nav-item">
-							<Link className="nav-links-mobile" to="/sign-up" onClick={closeMobileMenu}>
+							<Link
+								className="nav-links-mobile"
+								to="/sign-up"
+								onClick={closeMobileMenuHandler}
+							>
 								Sign Up
 							</Link>
 						</li>
